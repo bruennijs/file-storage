@@ -1,9 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using WebApi.JsonWebToken;
 
 namespace file_storage.Controllers
 {
@@ -24,10 +20,14 @@ namespace file_storage.Controllers
             return "value";
         }
 
+
+
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
         {
+            System.Console.WriteLine("HELLO is it me you looking for?");
+            string.Format("{0} value", value);
         }
 
         // PUT api/values/5
