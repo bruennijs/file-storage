@@ -16,7 +16,7 @@ namespace file_storage.Controllers
     [HttpPost("{id}")]
     public void Post(string newId)
     {
-      
+      System.Console.WriteLine($"new id[{newId}]");
     }
   }   
 }
