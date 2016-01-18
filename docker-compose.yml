@@ -9,10 +9,27 @@ app:
 app-dev:
   #build: .
   container_name: file-storage.app-dev
-  image: microsoft/aspnet:1.0.0-rc1-update1
+  #image: microsoft/aspnet:1.0.0-rc1-update1
+  image: filestorage_app:latest
   volumes:
-   - .:/src
+   - .:/app
   ports:
    - "8082:5000"
   expose:
     - "5000"
+app-console:
+  #build: .
+  container_name: file-storage.app-console
+  #image: microsoft/aspnet:1.0.0-rc1-update1
+  image: filestorage_app:latest
+  volumes:
+   - .:/app
+  ports:
+   - "8082:5000"
+  expose:
+    - "5000"    
+  #command: /bin/bash
+  entrypoint: /bin/bash
+
+  stdin_open: true
+  tty: true

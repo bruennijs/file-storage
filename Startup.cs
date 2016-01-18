@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using log4net;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -12,6 +12,8 @@ namespace file_storage
 {
     public class Startup
     {
+      private static ILog Log = log4net.LogManager.GetLogger(typeof(Startup));
+      
         public Startup(IHostingEnvironment env)
         {
             // Set up configuration sources.
@@ -24,10 +26,19 @@ namespace file_storage
         public IConfigurationRoot Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddMvc();
+          Console.WriteLine("Entry ConfigureServices");
+          Log.Debug("Entry ConfigureServices");
+          
+          // Add framework services.
+          services.AddMvc();
+            
+          var containerBuilder = new ContainerBuilder();
+          containerBuilder.RegisterModule(new AutoFacModule());
+          containerBuilder.Populate(services);
+          var container = containerBuilder.Build();
+          return container.Resolve<IServiceProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

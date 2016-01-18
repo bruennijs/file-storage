@@ -20,10 +20,16 @@
     "Rx-Linq": "2.3.0-beta2",
     "WebApi.JsonWebToken.Binaries": "0.2.0",
     "RabbitMQ.Client": "3.6.0",
-    "Newtonsoft.Json": "8.0.2"
+    "Newtonsoft.Json": "8.0.2",
+    "Autofac": "4.0.0-rc1-*",
+    "Autofac.Extensions.DependencyInjection": "4.0.0-rc1-*",
+    "NUnit": "3.0.1",
+    "NUnit.Runners": "3.0.1",
+    "log4net": "2.0.5"
   },
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Server.Kestrel",
+    "unittests": "dnx nunit-console"
   },
   "frameworks": {
     "dnx451": {}
