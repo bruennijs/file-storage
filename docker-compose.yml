@@ -8,7 +8,8 @@ app:
     - "5000"
 app-dev:
   #build: .
-  container_name: file-storage.app-dev
+  container_name: 
+    file-storage.app-dev
   #image: microsoft/aspnet:1.0.0-rc1-update1
   image: filestorage_app:latest
   volumes:
@@ -21,7 +22,7 @@ app-console:
   #build: .
   container_name: file-storage.app-console
   #image: microsoft/aspnet:1.0.0-rc1-update1
-  image: filestorage_app:latest
+  image: microsoft/dotnet:latest
   volumes:
    - .:/app
   ports:

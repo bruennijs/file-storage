@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "compilationOptions": {
+    "emitEntryPoint": false
+  },
+  "dependencies": {
+    "Rx-Core": "2.3.0-beta2",
+    "Rx-Interfaces": "2.3.0-beta2",
+    "Rx-Linq": "2.3.0-beta2",
+    "Newtonsoft.Json": "8.0.2",
+    "Autofac": "4.0.0-rc1-*",
+    "log4net": "2.0.5"
+  },
+  "frameworks": {
+    "net452": {},
+    "dnxcore50": {
+      "dependencies": {
+        "System.Console": "4.0.0.0-*"
+      }
+    }
+  }
+}
