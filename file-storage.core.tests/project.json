@@ -6,10 +6,13 @@
   "dependencies": {
     "NUnit": "3.0.1",
     "NUnit.Console": "3.0.1",
+    "NUnit.Runners": "3.0.1",
     "file-storage.core": "1.0.0",
     "log4net": "2.0.5"
   },
   "commands": {
+    "bla": "/home/bruenni/.dnx/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll",
+    "nunit": "/home/bruenni/.dnx/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe",
     "tests": "$DNX_USER_HOME/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll"
   },
   "frameworks": {
