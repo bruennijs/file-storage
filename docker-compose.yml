@@ -1,36 +1,72 @@
-app:
-  build: .
-  container_name: file-storage.app
-  #image: microsoft/aspnet:1.0.0-rc1-update1  
-  ports:
-   - "8082:5000"
-  expose:
-    - "5000"
-app-dev:
-  #build: .
-  container_name: 
-    file-storage.app-dev
-  #image: microsoft/aspnet:1.0.0-rc1-update1
-  image: filestorage_app:latest
-  volumes:
-   - .:/app
-  ports:
-   - "8082:5000"
-  expose:
-    - "5000"
-app-console:
-  #build: .
-  container_name: file-storage.app-console
-  #image: microsoft/aspnet:1.0.0-rc1-update1
-  image: microsoft/dotnet:latest
-  volumes:
-   - .:/app
-  ports:
-   - "8082:5000"
-  expose:
-    - "5000"    
-  #command: /bin/bash
-  entrypoint: /bin/bash
+version: '2'
+services:
+  mono-app:
+    build:
+      context: .
+      dockerfile: Dockerfile-dnx-app
+    container_name: file-storage.mono-app
+    #image: microsoft/aspnet:1.0.0-rc1-update1  
+    ports:
+     - "8082:5000"
+    expose:
+      - "5000"
 
-  stdin_open: true
-  tty: true
+  mono-app-shell:
+    build:
+      context: .
+      dockerfile: Dockerfile-dnx-app
+    container_name: file-storage.mono-app-shell
+    #image: microsoft/aspnet:1.0.0-rc1-update1  
+    entrypoint: /bin/bash
+
+  dnx-mono:
+    container_name: dnx-mono
+    image: microsoft/aspnet:1.0.0-rc1-update1
+    #image: filestorage_app:latest
+    volumes:
+     - .:/app
+    #ports:
+    # - "8082:5000"
+    #expose:
+    #  - "5000"
+    entrypoint: /bin/bash
+  dnx-coreclr:
+    container_name: dnx-coreclr
+    image: microsoft/aspnet:1.0.0-rc1-update1-coreclr
+    #image: microsoft/dotnet:latest
+    volumes:
+     - .:/app
+    ports:
+     - "8082:5000"
+    expose:
+      - "5000"    
+    #command: /bin/bash
+    entrypoint: /bin/bash 
+
+  dotnet:
+    container_name: dotnet
+    #image: microsoft/aspnet:1.0.0-rc1-update1-coreclr
+    image: microsoft/dotnet:latest
+    volumes:
+     - .:/app
+    entrypoint: /bin/bash
+
+  dotnet-app:
+    build:
+      context: .
+      dockerfile: Dockerfile-dotnet-app
+    container_name: file-storage.dotnet-app
+    #image: microsoft/aspnet:1.0.0-rc1-update1
+    #image: microsoft/dotnet:latest
+    volumes:
+     - .:/app 
+
+  dotnet-app-shell:
+    build:
+      context: .
+      dockerfile: Dockerfile-dotnet
+    container_name: file-storage.dotnet-app-shell
+    #image: bruenni/dotnet:1.0.0.001331-1
+    volumes:
+     - .:/app
+    #entrypoint: /bin/bash

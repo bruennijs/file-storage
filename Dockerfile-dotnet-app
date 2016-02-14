@@ -1,0 +1,12 @@
+# contains dotnet CLI and only coreclr
+FROM microsoft/dotnet:latest
+
+COPY . /app
+WORKDIR /app
+RUN ["dotnet", "restore"]
+
+#VOLUME .:/app
+
+#EXPOSE 5000/tcp
+ENTRYPOINT ["dotnet", "run"]
+	

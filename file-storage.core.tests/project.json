@@ -12,11 +12,11 @@
   },
   "commands": {
     "bla": "/home/bruenni/.dnx/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll",
-    "nunit": "/home/bruenni/.dnx/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe",
+    "nunit": "nunit3-console.exe",
     "tests": "$DNX_USER_HOME/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll"
   },
   "frameworks": {
-    "dnx451": {}
+    "dnxcore50": {}
   },
   "scripts": {
       "postbuild": "cp file-storage.core.tests.dll.config ./bin/Debug/dnx451"
