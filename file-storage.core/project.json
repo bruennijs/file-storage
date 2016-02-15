@@ -3,16 +3,13 @@
   "compilationOptions": {
     "emitEntryPoint": false
   },
-  "dependencies": {
+  "dependencies": {   
     "NETStandard.Library": "1.0.0-rc2-23811",
-    "Rx-Core": "2.3.0-beta2",
-    "Rx-Interfaces": "2.3.0-beta2",
-    "Rx-Linq": "2.3.0-beta2",
-    "Newtonsoft.Json": "8.0.2",
-    "Autofac": "4.0.0-rc1-*",
-    "log4net": "2.0.5"
+    "Rx-Core": "2.2.5",
+    "Autofac": "4.0.0-rc1-*",     
+    "Newtonsoft.Json": "8.0.2"
   },
   "frameworks": {
-    "dnxcore50": {}
+    "dotnet5.2": {}
   }
 }

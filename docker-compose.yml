@@ -11,16 +11,8 @@ services:
     expose:
       - "5000"
 
-  mono-app-shell:
-    build:
-      context: .
-      dockerfile: Dockerfile-dnx-app
-    container_name: file-storage.mono-app-shell
-    #image: microsoft/aspnet:1.0.0-rc1-update1  
-    entrypoint: /bin/bash
-
-  dnx-mono:
-    container_name: dnx-mono
+  dnx-mono-shell:
+    container_name: dnx-mono-shell
     image: microsoft/aspnet:1.0.0-rc1-update1
     #image: filestorage_app:latest
     volumes:
@@ -61,12 +53,12 @@ services:
     volumes:
      - .:/app 
 
-  dotnet-app-shell:
-    build:
-      context: .
-      dockerfile: Dockerfile-dotnet
-    container_name: file-storage.dotnet-app-shell
-    #image: bruenni/dotnet:1.0.0.001331-1
+  dotnet-shell:
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile-dotnet
+    container_name: file-storage.dotnet-shell
+    image: bruenni/dotnet:1.0.0.001331-1
     volumes:
      - .:/app
     #entrypoint: /bin/bash
