@@ -17,10 +17,9 @@ services:
     #image: filestorage_app:latest
     volumes:
      - .:/app
-    #ports:
-    # - "8082:5000"
-    #expose:
-    #  - "5000"
+    read_only: false
+    stdin_open: true
+    tty: true    
     entrypoint: /bin/bash
   dnx-coreclr:
     container_name: dnx-coreclr
@@ -33,14 +32,20 @@ services:
     expose:
       - "5000"    
     #command: /bin/bash
+    read_only: false
+    stdin_open: true
+    tty: true    
     entrypoint: /bin/bash 
 
-  dotnet:
-    container_name: dotnet
+  microsoft-dotnet:
+    container_name: microsoft-dotnet
     #image: microsoft/aspnet:1.0.0-rc1-update1-coreclr
     image: microsoft/dotnet:latest
     volumes:
      - .:/app
+    read_only: false
+    stdin_open: true
+    tty: true     
     entrypoint: /bin/bash
 
   dotnet-app:
@@ -53,12 +58,18 @@ services:
     volumes:
      - .:/app 
 
+  # Afterwards start container and attach
+  # docker start -a -i dotnet-shell
   dotnet-shell:
-    #build:
-    #  context: .
-    #  dockerfile: Dockerfile-dotnet
-    container_name: file-storage.dotnet-shell
-    image: bruenni/dotnet:1.0.0.001331-1
+    build:
+      context: .
+      dockerfile: Dockerfile-dotnet  
+    container_name: dotnet-shell
+    #depends_on:
+    #  - dotnet-build
     volumes:
      - .:/app
-    #entrypoint: /bin/bash
+    read_only: false
+    stdin_open: true
+    tty: true
+    entrypoint: /bin/bash

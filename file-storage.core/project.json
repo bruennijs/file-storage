@@ -4,12 +4,14 @@
     "emitEntryPoint": false
   },
   "dependencies": {   
-    "NETStandard.Library": "1.0.0-rc2-23811",
-    "Rx-Core": "2.2.5",
-    "Autofac": "4.0.0-rc1-*",     
-    "Newtonsoft.Json": "8.0.2"
+    "Microsoft.NETCore.Targets": "1.0.1-rc3-23823",
+    "Microsoft.TargetingPack.NETFramework.v4.6": "1.0.1",
+    "NETStandard.Library": "1.0.0-rc3-23822",
+    "Autofac": "4.0.0-rc1-*",   
+    "Newtonsoft.Json": "8.0.2",
+    "log4net": "2.0.5"
   },
   "frameworks": {
-    "dotnet5.2": {}
+    "dotnet5.4": {}
   }
 }

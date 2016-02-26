@@ -15,8 +15,7 @@
     "tests": "$DNX_USER_HOME/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll"
   },
   "frameworks": {
-    "net45": {},
-    "dnx451": {}
+    "net46": {}
   },
   "scripts": {
       "postbuild": "cp file-storage.core.tests.dll.config ./bin/Debug/dnx451"
