@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using log4net;
 
-namespace FileStorage.application.services
+namespace filestorage.core.application
 {
     
     

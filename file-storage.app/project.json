@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "compilationOptions": {
+    "emitEntryPoint": true
+  },
+  "commands": {
+    "coreapp": "file-storage.app.dll",
+  },
+  "dependencies": {   
+    "file-storage.core": "1.0.0"
+  },
+  "frameworks": {
+    "dnx451": {}
+  },
+  "scripts": {
+    "prebuild": "echo before building",
+    "postbuild": "cp *.config ./bin/Debug/dnx451",
+    "prepack": "echo before packing",
+    "postpack": "echo after packing",
+    "prerestore": "echo before restoring packages",
+    "postrestore": "echo after restoring packages"
+  }
+}

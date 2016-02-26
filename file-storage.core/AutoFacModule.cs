@@ -1,5 +1,5 @@
 using Autofac;
-using FileStorage.application.services;
+using filestorage.core.application;
 using FileStorage.domain.identity;
 
 public class AutoFacModule : Module
