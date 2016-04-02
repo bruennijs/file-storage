@@ -4,18 +4,16 @@
     "emitEntryPoint": false
   },
   "dependencies": {
-    "NUnit": "2.6.4",
-    "NUnit.Runners": "2.6.4",
+    "NUnit": "3.2.0",
+    "NUnitLite": "3.2.0-*",
     "file-storage.core": "1.0.0",
     "log4net": "2.0.5"
   },
   "commands": {
-    "bla": "/home/bruenni/.dnx/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll",
-    "nunit": "nunit-console bin/Debug/f.dll",
-    "tests": "$DNX_USER_HOME/packages/NUnit.Console/3.0.1/tools/nunit3-console.exe ./bin/Debug/dnx451/file-storage.core.tests.dll"
+    "nunit": "file-storage.core.tests",
   },
   "frameworks": {
-    "net46": {}
+    "dnx451": {}
   },
   "scripts": {
       "postbuild": "cp file-storage.core.tests.dll.config ./bin/Debug/dnx451"

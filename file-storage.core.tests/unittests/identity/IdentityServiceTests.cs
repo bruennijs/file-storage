@@ -1,10 +1,10 @@
-using FileStorage.application.services;
 using log4net;
 using NUnit.Framework;
+using filestorage.core.application;
 
 namespace FileStorage.core.tests.unittests.identity
 {
-  [TestFixture]
+  [NUnit.Framework.TestFixture]
   public class IdentityServiceTests
   {
     private static ILog Log = LogManager.GetLogger(typeof(IdentityServiceTests));

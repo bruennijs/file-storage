@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Reflection;
+using FileStorage.domain.files;
 using log4net;
 
 namespace filestorage.core.application
@@ -18,9 +20,8 @@ namespace filestorage.core.application
           
           Console.WriteLine($"name is {name}");
           
-          var path = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "test.txt");         
-          
-          //JsonConvert.DeserializeObject<File
+          var path = Path.Combine(Assembly.GetEntryAssembly().Location, "test.txt");         
+         
           
           return true;          
       }
