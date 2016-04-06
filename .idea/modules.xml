@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/..//file-storage/file-storage.sln.iml" filepath="$PROJECT_DIR$/..//file-storage/file-storage.sln.iml" />
+      <module fileurl="file://$PROJECT_DIR$/file-storage.sln.iml" filepath="$PROJECT_DIR$/file-storage.sln.iml" />
     </modules>
   </component>
 </project>

@@ -21,8 +21,7 @@ namespace filestorage.core.application
           Console.WriteLine($"name is {name}");
           
           var path = Path.Combine(Assembly.GetEntryAssembly().Location, "test.txt");         
-         
-          
+
           return true;          
       }
   }

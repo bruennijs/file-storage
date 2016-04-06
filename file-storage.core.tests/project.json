@@ -4,9 +4,11 @@
     "emitEntryPoint": false
   },
   "dependencies": {
+    "Autofac": "4.0.0-rc1-*",
     "NUnit": "3.2.0",
     "NUnitLite": "3.2.0-*",
     "file-storage.core": "1.0.0",
+    "file-storage.tests.common": "1.0.0",
     "log4net": "2.0.5"
   },
   "commands": {

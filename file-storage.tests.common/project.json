@@ -1,0 +1,14 @@
+﻿{
+  "version": "1.0.0",
+  "description": "file_storage.tests.common Class Library",
+  "authors": [ "Oliver Bruentje" ],
+  "tags": [ "" ],
+  "projectUrl": "",  
+  "licenseUrl": "",
+  "dependencies": {
+    "Autofac": "4.0.0-rc1-*"
+  },  
+  "frameworks": {
+    "dnx451": { }
+  }
+}

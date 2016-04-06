@@ -1,9 +1,9 @@
-﻿using System;
-using System.Reflection;
+﻿using Autofac;
 using log4net;
 using NUnitLite;
+using filestorage.tests.common;
 
-namespace Redis.test
+namespace filestorage.core.tests
 {
   public class Program
   {
@@ -15,6 +15,10 @@ namespace Redis.test
 
       log4net.Config.XmlConfigurator.Configure();
       _log.Info("test starting...");
+
+      var builder = new ContainerBuilder();
+      builder.RegisterModule(new AutoFacModule());
+      IntegrationTestBase.Container = builder.Build();
 
       new AutoRun().Execute(args);
     }
