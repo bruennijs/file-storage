@@ -21,16 +21,23 @@ services:
     stdin_open: true
     tty: true    
     entrypoint: /bin/bash
-  dnx-coreclr:
-    container_name: dnx-coreclr
+  dnx-mono-shell-ro:
+    container_name: dnx-mono-shell
+    image: microsoft/aspnet:1.0.0-rc1-update1
+    #image: filestorage_app:latest
+    volumes:
+     - .:/app
+    read_only: false
+    stdin_open: true
+    tty: true    
+    entrypoint: /bin/bash    
+    
+  dnx-coreclr-shell:
+    container_name: dnx-coreclr-shell
     image: microsoft/aspnet:1.0.0-rc1-update1-coreclr
     #image: microsoft/dotnet:latest
     volumes:
-     - .:/app
-    ports:
-     - "8082:5000"
-    expose:
-      - "5000"    
+     - .:/app   
     #command: /bin/bash
     read_only: false
     stdin_open: true
