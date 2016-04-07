@@ -6,13 +6,11 @@ using log4net;
 
 namespace filestorage.core.application
 {
-    
-    
     /// <summary>
     /// Application file service.
     /// </summary>
-    public class FilesService {
-      private static ILog Log = LogManager.GetLogger(typeof(FilesService));  
+    public class FilesApplicationService : IFilesApplicationService {
+      private static ILog Log = LogManager.GetLogger(typeof(FilesApplicationService));
         
       public bool Create(string name) {
           
@@ -22,7 +20,7 @@ namespace filestorage.core.application
           
           var path = Path.Combine(Assembly.GetEntryAssembly().Location, "test.txt");         
 
-          return true;          
+          return true;
       }
   }
 }

@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using filestorage.core;
 using filestorage.core.application;
 using FileStorage.domain.identity;
 
@@ -12,7 +13,7 @@ public class AutoFacModule : Module
             .As<IIdentityService>()
             .InstancePerLifetimeScope();
             
-        builder.RegisterType<FilesService>().SingleInstance();         
+        builder.RegisterType<FilesApplicationService>().As<IFilesApplicationService>().SingleInstance();
 
         // builder.Register(c => new ValuesService(c.Resolve<ILogger>()))
         //     .As<IValuesService>()

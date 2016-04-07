@@ -15,8 +15,6 @@ namespace FileStorage.core.tests.unittests.identity
     {      
       //var filePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
       //var sut = new IdentityService();
-      FilesService fs = new FilesService();
-      Assert.IsTrue(fs.Create(name));
     }
   } 
 }
