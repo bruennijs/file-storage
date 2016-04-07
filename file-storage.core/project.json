@@ -8,7 +8,8 @@
     "log4net": "2.0.5",
     "RabbitMQ.Client": "3.6.1",
     "Rx-Core": "2.2.5",
-    "Rx-Linq": "2.2.5"
+    "Rx-Linq": "2.2.5",
+    "common.ddd": "1.0.0"
   },
   "frameworks": {
     "dnx451": {
