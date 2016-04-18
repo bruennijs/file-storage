@@ -1,0 +1,15 @@
+﻿{
+  "version": "1.0.0",
+  "description": "file-storage infrastrucural components like persistence and adapter (e.g. RabbitMQ)",
+  "authors": [ "Oliver Bruentje" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+        "Autofac": "4.0.0-rc1-177",
+        "RabbitMQ.Client": "3.6.1"
+	},
+  "frameworks": {
+    "dnx451": { }
+  }
+}
