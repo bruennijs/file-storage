@@ -1,4 +1,5 @@
-﻿using FileStorage.domain.files;
+﻿using Common.Ddd.Infrastructure.Event.Implementation;
+using FileStorage.domain.files;
 
 namespace filestorage.core.Event
 {

@@ -17,7 +17,7 @@ namespace filestorage.core.tests
             _log.Info("test starting...");
 
             var builder = new ContainerBuilder();
-            builder.RegisterModule(new common.ddd.AutoFacModule());
+            builder.RegisterModule(new Common.Ddd.AutoFacModule());
             builder.RegisterModule(new AutoFacModule());
             IntegrationTestBase.Container = builder.Build();
 

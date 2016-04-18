@@ -1,10 +1,8 @@
-using System;
 using System.IO;
 using System.Reflection;
-using common.ddd;
-using FileStorage.domain.files;
 using log4net;
-using common.ddd.Infrastructure.Event;
+using Common.Ddd.Infrastructure.Event;
+using Common.Ddd.Infrastructure.Persistence;
 using filestorage.core.Event;
 using File = FileStorage.domain.files.File;
 

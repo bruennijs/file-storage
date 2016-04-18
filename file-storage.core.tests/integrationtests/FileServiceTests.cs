@@ -3,7 +3,7 @@ using System.Reactive.Linq;
 using System.Reactive.Threading.Tasks;
 using System.Threading.Tasks;
 using Autofac;
-using common.ddd.Infrastructure.Event;
+using Common.Ddd.Infrastructure.Event;
 using filestorage.core;
 using filestorage.core.Event;
 using NUnit.Framework;
