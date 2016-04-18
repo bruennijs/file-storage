@@ -4,7 +4,7 @@
     "emitEntryPoint": false
   },
   "dependencies": {                  
-    "Autofac": "4.0.0-rc1-*",
+    "Autofac": "4.0.0-rc1-177",
     "log4net": "2.0.5",
     "RabbitMQ.Client": "3.6.1",
     "Rx-Core": "2.2.5",

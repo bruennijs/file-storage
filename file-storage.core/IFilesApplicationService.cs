@@ -1,7 +1,9 @@
-﻿namespace filestorage.core
+﻿using FileStorage.domain.files;
+
+namespace filestorage.core
 {
   public interface IFilesApplicationService
   {
-    bool Create(string name);
+    File Create(string name);
   }
 }

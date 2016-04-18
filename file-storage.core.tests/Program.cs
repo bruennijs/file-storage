@@ -5,22 +5,23 @@ using filestorage.tests.common;
 
 namespace filestorage.core.tests
 {
-  public class Program
-  {
-    private static ILog _log = log4net.LogManager.GetLogger(typeof(Program));
-
-    public static void Main(string[] args)
+    public class Program
     {
-      //Console.WriteLine(Assembly.GetExecutingAssembly().CodeBase);
+        private static ILog _log = log4net.LogManager.GetLogger(typeof(Program));
 
-      log4net.Config.XmlConfigurator.Configure();
-      _log.Info("test starting...");
+        public static void Main(string[] args)
+        {
+            //Console.WriteLine(Assembly.GetExecutingAssembly().CodeBase);
 
-      var builder = new ContainerBuilder();
-      builder.RegisterModule(new AutoFacModule());
-      IntegrationTestBase.Container = builder.Build();
+            log4net.Config.XmlConfigurator.Configure();
+            _log.Info("test starting...");
 
-      new AutoRun().Execute(args);
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new common.ddd.AutoFacModule());
+            builder.RegisterModule(new AutoFacModule());
+            IntegrationTestBase.Container = builder.Build();
+
+            new AutoRun().Execute(args);
+        }
     }
-  }
 }

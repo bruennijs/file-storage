@@ -18,7 +18,7 @@
     "dnx451": {}
   },
   "scripts": {
-      "postbuild": "cp file-storage.core.tests.dll.config ./bin/Debug/dnx451"
+      "#postbuild": "cp file-storage.core.tests.dll.config ./bin/Debug/dnx451"
   },
   "contentFiles": ["file-storage.core.tests.dll.config"]
 }

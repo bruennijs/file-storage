@@ -1,11 +1,13 @@
+using common.ddd;
+
 namespace  FileStorage.domain.identity
 {
 /// <summary>
 /// User in file domain.
 /// </summary>
-public class User : EntityObject {
+public class User : Entity {
   
-  public User(string id, string name)
+  public User(Id id, string name)
     :base(id)
   {
     this.Name = name;

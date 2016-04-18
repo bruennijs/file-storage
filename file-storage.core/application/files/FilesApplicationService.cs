@@ -1,30 +1,39 @@
 using System;
 using System.IO;
 using System.Reflection;
+using common.ddd;
 using FileStorage.domain.files;
 using log4net;
-using common.ddd.Domain.Entity;
+using common.ddd.Infrastructure.Event;
+using filestorage.core.Event;
+using File = FileStorage.domain.files.File;
 
 namespace filestorage.core.application
 {
     /// <summary>
     /// Application file service.
     /// </summary>
-    public class FilesApplicationService : IFilesApplicationService {
-      private static ILog Log = LogManager.GetLogger(typeof(FilesApplicationService));
+    public class FilesApplicationService : IFilesApplicationService
+    {
+        private static readonly ILog Log = LogManager.GetLogger(typeof(FilesApplicationService));
+        private readonly IDomainEventBus _domainEventBus;
 
-      public bool Create(string name)
-      {
+        public FilesApplicationService(IDomainEventBus domainEventBus)
+        {
+            _domainEventBus = domainEventBus;
+        }
 
-        var file = new FileStorage.domain.files.File(new Id("4711"), "meineDatei.txt");
+        public File Create(string name)
+        {
+            var file = new File(new Id("4711"), name);
 
-        Log.InfoFormat("FilesService.Create {0}", name);
-          
-        Console.WriteLine($"name is {name}");
-          
-          var path = Path.Combine(Assembly.GetEntryAssembly().Location, "test.txt");         
+            Log.InfoFormat("FilesService.Create {0}", name);
 
-          return true;
-      }
-  }
+            var path = Path.Combine(Assembly.GetEntryAssembly().Location, "test.txt");
+
+            _domainEventBus.Publish(new FileCreatedEvent(file));
+
+            return file;
+        }
+    }
 }
